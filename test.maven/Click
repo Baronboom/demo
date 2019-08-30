@@ -1,3 +1,7 @@
 分支2实现mybatis注解模式查询
 
 分支3实现ybatis注解和xml模式查询
+
+分支4实现grades_mapper.xml放入mapper包。（需要修改applicationContext-dao.xml里value="classpath:mapper/grades_mapper.xml"）
+http://localhost:8080/test.maven/student/index
+http://localhost:8080/test.maven/Type/index
