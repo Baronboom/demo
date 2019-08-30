@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<form action="index">
+	<form action="index" method="post">
 		<input name="txt"> <input type="submit" value="查询">
 	</form>
 
