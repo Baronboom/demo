@@ -27,7 +27,8 @@ public class StudentController {
 	
 	// ĞÂÔö
 	@RequestMapping("add")
-	public String add() {
+	public String add(ModelMap m) {
+		m.put("sublist", stus.selectgrades());
 		return "Stuedit";
 	}
 	
@@ -42,7 +43,7 @@ public class StudentController {
 	@RequestMapping("edit")
 	public String edit(Integer id,ModelMap m) {
 		m.put("info", stus.selectById(id));
-		return "Stuedit";
+		return add(m);
 	}
 	
 	// ĞŞ¸Ä

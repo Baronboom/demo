@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.Student_Dao;
+import entity.Grades;
 import entity.Student;
 import service.Student_Service;
 
@@ -33,6 +34,10 @@ public class Student_Service_Impl implements Student_Service {
 
 	public Student selectById(Integer id) {
 		return sd.selectById(id);
+	}
+
+	public List<Grades> selectgrades() {
+		return sd.selectgrades();
 	}
 	
 }

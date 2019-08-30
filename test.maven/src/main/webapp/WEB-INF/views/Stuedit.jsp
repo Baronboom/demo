@@ -20,6 +20,12 @@
 			<option value = "2">女</option>
 			</select>
 			
+			<select name = "gradesid">
+				<c:forEach items="${sublist}"  var="row">
+					<option value ="${row.id}">${row.name}</option>
+				</c:forEach>
+			</select>
+			
 			<input type="submit">
 		</form>
 </c:if>
@@ -32,6 +38,12 @@
 		<option value = "0" >不限</option>
 		<option value = "1" <c:if test="${info.sex == 1 }">" selected='selected' "</c:if> >男</option>
 		<option value = "2" <c:if test="${info.sex == 2 }">" selected='selected' "</c:if>  >女</option>
+		</select>
+		
+		<select name = "gradesid">
+		<c:forEach items="${sublist}"  var="row2">
+			<option value = "${row2.id}" <c:if test="${row2.id == info.gradesid}">" selected='selected' "</c:if> >${row2.name}</option>
+		</c:forEach>
 		</select>
 		<input type="submit">
 	</form>	

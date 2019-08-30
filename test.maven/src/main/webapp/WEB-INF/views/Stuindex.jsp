@@ -28,6 +28,7 @@
 			<td>编号</td>
 			<td>名称</td>
 			<td>性别</td>
+			<td>班级</td>
 			<td>操作</td>
 		</tr>
 		<c:forEach items="${list}" var="row" varStatus="v">
@@ -35,6 +36,7 @@
 				<td>${v.index}</td>
 				<td>${row.name}</td>
 				<td>${row.sexname}</td>
+				<td>${row.gradesname}</td>
 				<td><a href="javascript:del(${row.id})">删除</a>
 					<a href="edit?id=${row.id}">修改</a></td>
 			</tr>

@@ -4,7 +4,8 @@ public class Student {
 	private int id;
 	private String name;
 	private int sex;
-	
+	private int gradesid;
+	private String gradesname;
 	
 	public static String[] sexs = {"²»ÏÞ","ÄÐ","Å®"};
 	
@@ -12,6 +13,23 @@ public class Student {
 		return sexs[sex];
 	}
 	
+	
+	public int getGradesid() {
+		return gradesid;
+	}
+
+	public void setGradesid(int gradesid) {
+		this.gradesid = gradesid;
+	}
+
+	public String getGradesname() {
+		return gradesname;
+	}
+
+	public void setGradesname(String gradesname) {
+		this.gradesname = gradesname;
+	}
+
 	public int getId() {
 		return id;
 	}

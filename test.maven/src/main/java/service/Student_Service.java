@@ -2,6 +2,7 @@ package service;
 
 import java.util.List;
 
+import entity.Grades;
 import entity.Student;
 
 public interface Student_Service {
@@ -11,6 +12,9 @@ public interface Student_Service {
 	
 	// 查询单个
 	public Student selectById(Integer id);
+	
+	// 查询班级
+	public List<Grades> selectgrades();
 	
 	// 增加
 	public void insert(Student s);
