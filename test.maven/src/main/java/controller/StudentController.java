@@ -22,14 +22,14 @@ public class StudentController {
 			where = " where student.name like '%"+txt+"%'";
 		}
 		m.put("list", stus.select(where));
-		return "Stuindex";
+		return "Student/index";
 	}
 	
 	// 新增
 	@RequestMapping("add")
 	public String add(ModelMap m) {
 		m.put("sublist", stus.selectgrades());
-		return "Stuedit";
+		return "Student/edit";
 	}
 	
 	// 新增

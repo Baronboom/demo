@@ -6,5 +6,6 @@
 
 分支5 实现给student表增加状态列(sex) ,外键列(gradesid)
 
+分支6 实现把jsp文件放入各自文件夹下。同时调整controller return "Student/index"; 等 
 http://localhost:8080/test.maven/student/index
 http://localhost:8080/test.maven/Type/index

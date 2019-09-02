@@ -24,12 +24,12 @@
 	<table>
 		<tr>
 			<td>编号</td>
-			<td>名称</td>
+			<td>班级</td>
 			<td>操作</td>
 		</tr>
-		<c:forEach items="${list}" var="r">
+		<c:forEach items="${list}" var="r" varStatus="v">
 			<tr>
-				<td>${r.id}</td>
+				<td>${v.index}</td>
 				<td>${r.name}</td>
 				<td><a href="javascript:del(${r.id})">删除</a> <a
 					href="edit?id=${r.id}">修改</a></td>

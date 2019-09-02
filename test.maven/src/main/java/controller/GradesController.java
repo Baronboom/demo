@@ -28,13 +28,13 @@ public class GradesController {
 			where = " where grades.name like '%"+txt+"%'";
 		}
 		m.put("list", service.select(where));
-		return "Gradesindex";
+		return "Grades/index";
 	}
 
 	// 新增
 	@RequestMapping("add")
 	public String add(ModelMap m) {
-		return "Gradesedit";
+		return "Grades/edit";
 	}
 	
 	// 新增
@@ -48,7 +48,7 @@ public class GradesController {
 	@RequestMapping("edit")
 	public String edit(int id, ModelMap m) {
 		m.put("info", service.selectById(id));
-		return "Gradesedit";
+		return "Grades/edit";
 	}
 
 	// 修改
