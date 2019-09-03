@@ -1,7 +1,12 @@
 package controller;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,31 +27,28 @@ public class UserController {
 	public void ex(Exception e) {
 		e.printStackTrace();
 	}
-	
-	
+
 	@RequestMapping("login")
-	public String login(User u,ModelMap m,HttpSession s) {
-		User user = service.login(u);
-		if(user!=null) {
-			s.setMaxInactiveInterval(20);
-			s.setAttribute("user", user);
-			return "index";
-		}else {
+	public String login(User u, ModelMap m, HttpSession s) {
+		try {
+			SecurityUtils.getSubject().login(new UsernamePasswordToken(u.getName(), u.getPass()));
+		} catch (AccountException e) {
 			return "redirect:/login.html";
 		}
+		return "redirect:/index.jsp";
 	}
-	
+
 	@RequestMapping("outlogin")
-	public String login(HttpSession s) {
-		s.removeAttribute("user");
-		return "redirect:../login.html";
+	public String login(HttpSession s,HttpServletRequest req) {
+		SecurityUtils.getSubject().logout();
+		return "redirect:/login.html";
 	}
 
 	@RequestMapping("index")
-	public String index(String txt,ModelMap m) {
+	public String index(String txt, ModelMap m) {
 		String where = "";
-		if(txt != null) {
-			where = " where grades.name like '%"+txt+"%'";
+		if (txt != null) {
+			where = " where grades.name like '%" + txt + "%'";
 		}
 		m.put("list", service.select(where));
 		return "User/index";
@@ -57,14 +59,14 @@ public class UserController {
 	public String add(ModelMap m) {
 		return "User/edit";
 	}
-	
+
 	// ÐÂÔö
 	@RequestMapping("insert")
 	public String insert(User b, ModelMap m) {
 		service.insert(b);
-		return index(null,m);
+		return index(null, m);
 	}
-	
+
 	// ÐÞ¸Ä
 	@RequestMapping("edit")
 	public String edit(int id, ModelMap m) {
@@ -76,13 +78,13 @@ public class UserController {
 	@RequestMapping("update")
 	public String update(User b, ModelMap m) {
 		service.update(b);
-		return index(null,m);
+		return index(null, m);
 	}
 
 	// É¾³ý
 	@RequestMapping("delete")
 	public String delete(int id, ModelMap m) {
 		service.delete(id);
-		return index(null,m);
+		return index(null, m);
 	}
 }

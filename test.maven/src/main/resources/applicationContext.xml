@@ -43,12 +43,12 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<mvc:interceptors>  
+	<!-- <mvc:interceptors>  
    		 <mvc:interceptor>  
        	 <mvc:mapping path="/**"/>
         	<bean class="interceptor.LoginInterceptor"/>
    		 </mvc:interceptor>  
-	</mvc:interceptors> 
+	</mvc:interceptors>  -->
 	
 	<!-- 扫描实现类的包 -->
     <context:component-scan base-package="controller"></context:component-scan>
@@ -56,5 +56,6 @@
 	<context:component-scan base-package="dao"></context:component-scan>
 	<!-- 加载其他的配置 -->
 	<import resource="classpath:applicationContext-dao.xml" />
+	<import resource="classpath:shiro.xml" />
 
 </beans>
