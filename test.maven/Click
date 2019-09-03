@@ -1,11 +1,18 @@
 分支2实现mybatis注解模式查询
 
-分支3实现ybatis注解和xml模式查询
+分支3实现mybatis注解和xml模式查询
 
 分支4实现grades_mapper.xml放入mapper包。（需要修改applicationContext-dao.xml里value="classpath:mapper/grades_mapper.xml"）
 
 分支5 实现给student表增加状态列(sex) ,外键列(gradesid)
 
 分支6 实现把jsp文件放入各自文件夹下。同时调整controller return "Student/index"; 等 
+
+分支7 实现用户登陆  http://localhost:8080/test.maven/login.html
+user增加user表
+web.xml                 <url-pattern>*.html</url-pattern>
+applicationContext.xml  <bean class="interceptor.LoginInterceptor"/>
+
+
 http://localhost:8080/test.maven/student/index
-http://localhost:8080/test.maven/Type/index
+http://localhost:8080/test.maven/grades/index

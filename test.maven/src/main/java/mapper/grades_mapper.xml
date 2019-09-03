@@ -6,6 +6,7 @@
 <mapper namespace="dao.Grades_Dao">		<!-- xml与接口dao关联 -->
 
 	<!-- id为方法名 -->
+	
 	<!--查询全部 -->
 	<select id="select" resultType="entity.Grades" parameterType="java.lang.String">
 		select * from grades ${where}
