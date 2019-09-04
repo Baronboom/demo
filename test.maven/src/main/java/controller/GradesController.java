@@ -31,11 +31,11 @@ public class GradesController {
 		m.put("list", service.select(where));
 		return "Grades/index";
 	}
-
+ 
 	// ĞÂÔö
-	@RequiresPermissions("aaa")
 	@RequestMapping("add")
 	public String add(ModelMap m) {
+		System.out.println("ok");
 		return "Grades/edit";
 	}
 	
