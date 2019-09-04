@@ -9,6 +9,8 @@
 分支6 实现把jsp文件放入各自文件夹下。同时调整controller return "Student/index"; 等 
 
 分支7 实现用户登陆  http://localhost:8080/test.maven/login.html
+
+分支shirologin 实现shiro框架来完成权限
 user增加user表
 web.xml                 <url-pattern>*.html</url-pattern>
 applicationContext.xml  <bean class="interceptor.LoginInterceptor"/>
