@@ -32,7 +32,7 @@ function ok(o){
 <a href="student/add" target="cc">student/add</a> <br>
 </s:hasPermission>
 <s:hasPermission name="test"><!-- 如果没有test权限，这里肯定不显示 -->
-<a href="student/add" target="cc">student/add</a> <br>
+<a href="student/add" target="cc">tttttt</a> <br>
 </s:hasPermission>
 <a href="student/index" target="cc">学生</a> <br>
 <a href="grades/index" target="cc">班级</a>

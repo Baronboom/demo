@@ -27,7 +27,7 @@ public class StudentController {
 	}
 	
 	// ĞÂÔö
-	@RequiresPermissions("add")
+	@RequiresPermissions("adcc")
 	@RequestMapping("add")
 	public String add(ModelMap m) {
 		m.put("sublist", stus.selectgrades());

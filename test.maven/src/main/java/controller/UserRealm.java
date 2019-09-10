@@ -27,6 +27,8 @@ public class UserRealm extends AuthorizingRealm {
 	User_Service service;
 	
     protected Logger logger =  LoggerFactory.getLogger(this.getClass());  
+    
+    // 这个方法用来权限赋值
     @Override
     protected AuthorizationInfo  doGetAuthorizationInfo(PrincipalCollection arg0)
     {
@@ -45,6 +47,8 @@ public class UserRealm extends AuthorizingRealm {
          sainfo.setStringPermissions(permissions);
         return sainfo;
     }
+    
+    // 这个方法用作登陆检验
     @Override
     protected AuthenticationInfo  doGetAuthenticationInfo(AuthenticationToken  arg0)
         throws AuthenticationException
